@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0e1b30" />
+    <meta name="theme-color" content="#f5f1ea" />
     <script>
       // Apply the page language (Arabic pages live under /ar) and the saved theme
       // before first paint (no flash). Prerendered pages already carry lang/dir.
@@ -18,7 +18,7 @@
           root.dir = 'rtl';
         }
         if (theme !== 'light' && theme !== 'dark') {
-          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          theme = 'light'; // default for first-time visitors; the toggle saves their choice
         }
         root.dataset.theme = theme;
       })();

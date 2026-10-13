@@ -63,7 +63,7 @@ It then appears on the home page, the services page, the footer, the contact for
 
 - **English / Arabic:** the "ع" / "EN" button in the header switches language. Arabic switches the whole layout to right-to-left (`<html dir="rtl">`) and uses IBM Plex Sans Arabic. Styles use logical properties (`inset-inline-start`, `padding-inline-end`) so they mirror automatically.
 - **Light / dark:** the sun/moon button switches theme. Colours are CSS variables, overridden under `:root[data-theme='dark']` in `src/styles/global.css`.
-- Both choices are saved in the visitor's browser. A small script in `index.html` applies them before the page draws, so there's no flash. With no saved choice, the theme follows the device setting.
+- Both choices are saved in the visitor's browser. A small script in `index.html` applies them before the page draws, so there's no flash. With no saved choice, the site opens in the light theme.
 
 ### Styling
 

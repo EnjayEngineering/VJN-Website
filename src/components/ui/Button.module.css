@@ -1,0 +1,106 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    transform 0.2s var(--ease);
+}
+
+:root[lang='ar'] .button {
+  font-weight: 600;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.md {
+  height: 46px;
+  padding-inline: 20px;
+  font-size: var(--fs-sm);
+}
+
+.lg {
+  height: 52px;
+  padding-inline: 24px;
+  font-size: 1rem;
+}
+
+.icon {
+  transition: transform 0.2s var(--ease);
+}
+
+.button:hover .icon {
+  transform: translate(calc(2px * var(--dir)), -2px);
+}
+
+/* Main action: deep green with white text. */
+.primary {
+  background: var(--green);
+  color: #fff;
+}
+
+.primary:hover {
+  background: var(--green-3);
+}
+
+:root[data-theme='dark'] .primary {
+  background: var(--green-3);
+}
+
+/* Orange is for the single call to action in a band, with dark text for contrast. */
+.dark {
+  background: var(--contrast-bg);
+  color: var(--contrast-fg);
+}
+
+.dark:hover {
+  opacity: 0.9;
+}
+
+.outline {
+  border-color: var(--line-strong);
+  color: var(--text);
+  background: transparent;
+}
+
+.outline:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.light {
+  background: #fff;
+  color: var(--green);
+}
+
+.light:hover {
+  background: var(--paper);
+}
+
+.ghost-light {
+  border-color: rgb(255 255 255 / 0.45);
+  color: #fff;
+  background: transparent;
+}
+
+.ghost-light:hover {
+  border-color: #fff;
+  background: rgb(255 255 255 / 0.08);
+}

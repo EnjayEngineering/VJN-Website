@@ -1,0 +1,214 @@
+.captionLabel {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.grid {
+  display: grid;
+  gap: 40px;
+  align-items: start;
+}
+
+.content {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+}
+
+.heading {
+  font-size: var(--fs-h2);
+}
+
+.scope {
+  display: grid;
+  width: 100%;
+  margin-top: 18px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.scope li {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-lg);
+}
+
+.scopeNum {
+  flex-shrink: 0;
+  min-width: 2ch;
+  color: var(--accent-text);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.subheading {
+  margin-top: 28px;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips a {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.chips a:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+/* Sticky enquiry card --------------------------------------------------------- */
+.card {
+  display: grid;
+  gap: 12px;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  background: var(--green);
+  color: var(--text-on-dark);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardLabel {
+  color: var(--text-on-dark-muted);
+  font-size: var(--fs-xs);
+}
+
+.cardLicence {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #fff;
+}
+
+:root[lang='ar'] .cardLicence {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgb(100 210 167 / 0.15);
+  color: #8fe0bf;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.cardRows {
+  display: grid;
+  gap: 10px;
+  margin-block: 8px;
+  padding-block: 16px;
+  border-block: 1px solid var(--line-on-dark);
+  font-size: var(--fs-sm);
+}
+
+.cardRows > * {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardRows svg {
+  color: var(--accent);
+}
+
+.cardRows a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+}
+
+/* Buttons on the green card. */
+.actions > a:first-child {
+  background: var(--accent);
+  color: #1b201d;
+}
+
+.actions > a:first-child:hover {
+  background: var(--accent-strong);
+}
+
+.actions > a:last-child {
+  border-color: rgb(255 255 255 / 0.35);
+  color: #fff;
+}
+
+.actions > a:last-child:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* Related ----------------------------------------------------------------------- */
+.related {
+  padding-block: var(--section-y);
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+}
+
+.relatedTitle {
+  margin-bottom: 32px;
+  font-size: var(--fs-h2);
+}
+
+.relatedGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 540px), 1fr));
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+    gap: clamp(48px, 6vw, 96px);
+  }
+
+  .aside {
+    position: sticky;
+    top: calc(var(--header-h) + 24px);
+  }
+}

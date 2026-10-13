@@ -1,0 +1,154 @@
+/* The hero fills exactly one screen below the header. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(28px, 5vw, 56px);
+}
+
+/* Soft warm glow behind the mosaic. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset-block-start: -10%;
+  inset-inline-end: -10%;
+  z-index: -1;
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(217 96 31 / 0.12), transparent 65%);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--fs-h1);
+}
+
+.line {
+  display: block;
+  animation: fade-up 0.8s var(--ease) both;
+  animation-delay: calc(var(--i) * 90ms + 60ms);
+}
+
+.lead {
+  max-width: 50ch;
+  margin-top: 22px;
+  color: var(--text-muted);
+  font-size: var(--fs-lg);
+  animation: fade-up 0.8s var(--ease) 0.35s both;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+  animation: fade-up 0.8s var(--ease) 0.45s both;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-strong);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  animation: fade-up 0.8s var(--ease) 0.55s both;
+}
+
+.facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.facts li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Mosaic ------------------------------------------------------------------------ */
+.mosaic {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  aspect-ratio: 1 / 0.95;
+  animation: fade-in 1s var(--ease) 0.2s both;
+}
+
+.mosaic > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.tall {
+  grid-row: 1 / 3;
+}
+
+/* Desktop: headline beside the photos, all sized to the screen height. */
+@media (min-width: 1024px) {
+  .hero {
+    min-height: calc(100svh - var(--header-h));
+    padding-block: clamp(20px, 4svh, 48px);
+  }
+
+  .inner {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(40px, 5vw, 80px);
+  }
+
+  /* Shrink the type on short screens so everything stays in view. */
+  .title {
+    font-size: min(var(--fs-h1), 8.4svh);
+  }
+
+  .lead {
+    margin-top: min(22px, 2.6svh);
+    font-size: min(var(--fs-lg), 2.6svh);
+  }
+
+  .ctas {
+    margin-top: min(30px, 3.4svh);
+  }
+
+  .facts {
+    margin-top: min(32px, 3.6svh);
+    padding-top: min(20px, 2.4svh);
+  }
+
+  /* The photos never grow taller than the space under the header. */
+  .mosaic {
+    aspect-ratio: auto;
+    height: min(560px, calc(100svh - var(--header-h) - 2 * clamp(20px, 4svh, 48px)));
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}

@@ -1,0 +1,40 @@
+# Apache / cPanel hosting.
+# Every page is prerendered to its own .html file (e.g. /services -> services.html).
+
+Options -MultiViews
+DirectorySlash Off
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force one host and HTTPS so Google sees a single version of each page.
+  # Enable these once an SSL certificate is installed on the domain.
+  # RewriteCond %{HTTPS} off [OR]
+  # RewriteCond %{HTTP_HOST} ^www\. [NC]
+  # RewriteRule ^ https://rnstechservice.com%{REQUEST_URI} [R=301,L]
+
+  # /index.html -> /
+  RewriteCond %{THE_REQUEST} \s/index\.html[\s?]
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # /about.html -> /about
+  RewriteCond %{THE_REQUEST} \s/([^\s?]+)\.html[\s?]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # /about/ -> /about
+  RewriteCond %{REQUEST_URI} ^(.+)/$
+  RewriteRule ^ %1 [R=301,L]
+
+  # Serve /about from about.html
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Hashed build files never change; cache them for a year.
+  <If "%{REQUEST_URI} =~ m#^/assets/#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+</IfModule>

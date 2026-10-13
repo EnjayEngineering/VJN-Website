@@ -1,0 +1,59 @@
+.section {
+  padding-block: var(--section-y);
+}
+
+.filters {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 36px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.chip:hover {
+  color: var(--text);
+}
+
+.chipActive,
+.chipActive:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.count {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 540px), 1fr));
+}
+
+.cell {
+  display: flex;
+}
+
+.cell > * {
+  flex: 1;
+}

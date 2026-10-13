@@ -1,0 +1,21 @@
+# Dependencies and build output
+node_modules/
+dist/
+dist-server/
+
+# Local environment (form endpoint etc.)
+.env
+.env.*
+!.env.example
+
+# Old RNS website and letterhead, kept locally only
+_legacy/
+Word/
+
+# Business documents (quotations etc.), not website source
+*.docx
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db

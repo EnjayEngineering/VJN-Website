@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0e1b30" />
+    <script>
+      // Apply the page language (Arabic pages live under /ar) and the saved theme
+      // before first paint (no flash). Prerendered pages already carry lang/dir.
+      (function () {
+        var root = document.documentElement;
+        var path = location.pathname;
+        try {
+          var theme = localStorage.getItem('vjn-theme');
+        } catch (e) {}
+        if (path === '/ar' || path.indexOf('/ar/') === 0) {
+          root.lang = 'ar';
+          root.dir = 'rtl';
+        }
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        root.dataset.theme = theme;
+      })();
+    </script>
+    <link rel="icon" type="image/png" sizes="600x384" href="/brand/vjn-logo.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Fallback metadata for development; each built page gets its own (scripts/prerender.mjs). -->
+    <title data-prerender>VJN Technical Services | MEP, Maintenance &amp; Fit-out Works in Dubai</title>
+    <meta
+      data-prerender
+      name="description"
+      content="VJN Technical Services LLC delivers HVAC, electromechanical, plumbing, electrical and interior finishing works for residential, commercial and industrial clients in Dubai."
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <!-- Scroll-in animations need JavaScript; without it, show everything. -->
+      <style>
+        [data-reveal] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

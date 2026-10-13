@@ -1,0 +1,51 @@
+.banner {
+  position: fixed;
+  inset-inline: 16px;
+  bottom: 16px;
+  z-index: 90;
+  display: grid;
+  gap: 14px;
+  max-width: 520px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-lg);
+  animation: rise 0.45s var(--ease);
+}
+
+.message {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.message a {
+  color: var(--brand-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions > * {
+  flex: 1;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner {
+    animation: none;
+  }
+}

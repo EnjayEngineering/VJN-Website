@@ -1,0 +1,142 @@
+.list {
+  display: grid;
+}
+
+.sector {
+  padding-block: var(--section-y) 0;
+}
+
+.sector:last-child {
+  padding-bottom: var(--section-y);
+}
+
+.banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4 / 3;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgb(8 30 23 / 0.85) 0%, rgb(8 30 23 / 0) 55%);
+}
+
+.bannerText {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  padding: clamp(20px, 3vw, 40px);
+  color: #fff;
+}
+
+.number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 2rem + 2.4vw, 4.4rem);
+  font-weight: 600;
+  line-height: 0.9;
+  color: var(--accent);
+}
+
+.kicker {
+  margin-bottom: 6px;
+  color: rgb(255 255 255 / 0.8);
+  font-size: var(--fs-sm);
+}
+
+.title {
+  font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem);
+  color: #fff;
+}
+
+.details {
+  display: grid;
+  gap: 32px;
+  padding-top: 36px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.intro {
+  font-size: var(--fs-lg);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  padding-bottom: 28px;
+}
+
+.chips a {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.chips a:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.offer {
+  display: grid;
+  border-top: 1px solid var(--line-strong);
+}
+
+.offer li {
+  display: grid;
+  gap: 2px;
+  padding-block: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.offer li:last-child {
+  border-bottom: 0;
+}
+
+.offer strong {
+  font-weight: 600;
+}
+
+.offer span {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 760px) {
+  .banner {
+    aspect-ratio: 21 / 8;
+  }
+}
+
+@media (min-width: 960px) {
+  .details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(40px, 6vw, 96px);
+  }
+}

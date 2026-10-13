@@ -1,0 +1,108 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding-block: clamp(32px, 5vw, 64px) clamp(48px, 6vw, 88px);
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 32px;
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
+
+.crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.crumbs a:hover {
+  color: var(--text);
+}
+
+.crumbs [aria-current] {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.eyebrow {
+  margin-bottom: 14px;
+  color: var(--accent-text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.title {
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 1.5rem + 2.8vw, 3.8rem);
+}
+
+:root[lang='ar'] .title {
+  max-width: 22ch;
+}
+
+.lead {
+  max-width: 52ch;
+  margin-top: 22px;
+  color: var(--text-muted);
+  font-size: var(--fs-lg);
+}
+
+.figure {
+  position: relative;
+  margin: 0;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+/* A thin orange frame offset behind the photo. */
+.figure::before {
+  content: '';
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  z-index: -1;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-lg);
+}
+
+:root[dir='rtl'] .figure::before {
+  inset: 18px 18px -18px -18px;
+}
+
+.caption {
+  position: absolute;
+  inset-inline-start: 16px;
+  bottom: 16px;
+  max-width: calc(100% - 32px);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  backdrop-filter: blur(8px);
+  font-size: var(--fs-xs);
+  line-height: 1.4;
+  box-shadow: var(--shadow);
+}
+
+@media (min-width: 960px) {
+  .withImage .inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(48px, 6vw, 96px);
+  }
+}

@@ -1,0 +1,295 @@
+@import '@fontsource-variable/instrument-sans';
+@import '@fontsource-variable/noto-kufi-arabic';
+@import '@fontsource/ibm-plex-sans-arabic/400.css';
+@import '@fontsource/ibm-plex-sans-arabic/500.css';
+@import '@fontsource/ibm-plex-sans-arabic/600.css';
+@import '@fontsource/ibm-plex-sans-arabic/700.css';
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Colours come from the VJN emblem: deep green as the main
+   colour, the emblem's orange for highlights, magenta used sparingly.
+   One plain sans-serif family is used for everything.
+   Older token names are kept as aliases so shared components still work.
+   --------------------------------------------------------------------------- */
+:root {
+  /* Brand */
+  --green: #0f3d30;
+  --green-2: #164d3d;
+  --green-3: #1f6a54;
+  --accent: #d9601f; /* emblem orange */
+  --accent-strong: #bf4f12;
+  --accent-text: #ad4a12; /* orange that passes AA as text on paper */
+  --accent-soft: #f8e9df;
+  --magenta: #9e0f5c;
+  --status: #1e7d5c;
+
+  /* Aliases used by shared components */
+  --navy: var(--green);
+  --navy-2: var(--green-2);
+  --navy-3: var(--green-3);
+  --brand: var(--green);
+  --brand-strong: var(--green-2);
+  --brand-soft: #e3eee9;
+  --brand-text: var(--green);
+  --ink: var(--green);
+
+  /* Neutrals */
+  --paper: #f5f1ea; /* warm stone */
+  --paper-2: #ebe5da;
+  --surface: #fffdf9;
+  --text: #1b201d;
+  --text-muted: #5e6762;
+  --text-on-dark: #f3f1ec;
+  --text-on-dark-muted: #b7c4bd;
+  --line: rgb(27 32 29 / 0.1);
+  --line-strong: rgb(27 32 29 / 0.2);
+  --line-on-dark: rgb(255 255 255 / 0.14);
+  --contrast-bg: #ffffff;
+  --contrast-fg: var(--green);
+
+  /* Type */
+  --font-heading: 'Instrument Sans Variable', 'Instrument Sans', system-ui, sans-serif;
+  --font-display: 'Instrument Sans Variable', 'Instrument Sans', system-ui, sans-serif;
+  --font-body: 'Instrument Sans Variable', 'Instrument Sans', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'Consolas', monospace;
+  --heading-weight: 600;
+  --display-stretch: 100%;
+  --fs-xs: 0.875rem;
+  --fs-sm: 0.96rem;
+  --fs-md: 1.0625rem;
+  --fs-lg: clamp(1.1rem, 1.02rem + 0.35vw, 1.25rem);
+  --fs-h3: clamp(1.15rem, 1.05rem + 0.45vw, 1.35rem);
+  --fs-h2: clamp(1.9rem, 1.35rem + 2.1vw, 3rem);
+  --fs-h1: clamp(2.4rem, 1.5rem + 3.6vw, 4.4rem);
+
+  /* Space & shape */
+  --gutter: clamp(18px, 4vw, 44px);
+  --container: 1240px;
+  --section-y: clamp(72px, 9vw, 128px);
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --shadow: 0 1px 2px rgb(15 61 48 / 0.06), 0 10px 30px -14px rgb(15 61 48 / 0.25);
+  --shadow-lg: 0 30px 60px -28px rgb(15 61 48 / 0.45);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.9, 0.3, 1);
+  --header-h: 76px;
+
+  /* Writing direction helpers (flipped for Arabic below) */
+  --dir: 1;
+  --to-end: 90deg;
+  --start-edge: left;
+
+  color-scheme: light;
+}
+
+/* ---------------------------------------------------------------------------
+   Dark theme
+   --------------------------------------------------------------------------- */
+:root[data-theme='dark'] {
+  --green: #0c2c23;
+  --green-2: #123a2e;
+  --green-3: #1f6a54;
+  --accent: #ec7a3c;
+  --accent-strong: #ff8f55;
+  --accent-text: #f4a06d;
+  --accent-soft: rgb(236 122 60 / 0.14);
+  --status: #64d2a7;
+  --brand-soft: rgb(31 106 84 / 0.25);
+  --brand-text: #8fd5bd;
+  --paper: #101613;
+  --paper-2: #17201c;
+  --surface: #1a2420;
+  --text: #ece9e2;
+  --text-muted: #a3b0a9;
+  --line: rgb(255 255 255 / 0.09);
+  --line-strong: rgb(255 255 255 / 0.2);
+  --contrast-bg: #ece9e2;
+  --contrast-fg: #0c2c23;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 10px 30px -14px rgb(0 0 0 / 0.7);
+  --shadow-lg: 0 30px 60px -28px rgb(0 0 0 / 0.8);
+
+  color-scheme: dark;
+}
+
+/* ---------------------------------------------------------------------------
+   Arabic / right-to-left
+   --------------------------------------------------------------------------- */
+:root[dir='rtl'] {
+  --dir: -1;
+  --to-end: 270deg;
+  --start-edge: right;
+}
+
+:root[lang='ar'] {
+  --font-heading: 'Noto Kufi Arabic Variable', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --font-display: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --heading-weight: 700;
+  --fs-h1: clamp(2.2rem, 1.4rem + 3.4vw, 4rem);
+  --fs-h2: clamp(1.8rem, 1.3rem + 2vw, 2.8rem);
+}
+
+/* Arabic letters join; tracking would break the joins, and the script needs taller lines. */
+:root[lang='ar'] * {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+:root[lang='ar'] body {
+  line-height: 1.85;
+}
+
+:root[lang='ar'] :is(h1, h2) {
+  line-height: 1.45;
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  transition:
+    background-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+/* Highlighted words in headlines: orange, same style. */
+h1 em,
+h2 em {
+  font-style: normal;
+  color: var(--accent-text);
+}
+
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  inset-inline-start: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--green);
+  color: #fff;
+  font-weight: 600;
+  transform: translateY(-150%);
+  transition: transform 0.2s var(--ease);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.page-enter {
+  animation: page-enter 0.5s var(--ease) both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,59 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.light {
+  color: #fff;
+}
+
+/* The emblem has a dark green stroke, so it gets a light plate on dark backgrounds. */
+.light .mark,
+:root[data-theme='dark'] .mark {
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+
+.mark {
+  width: 46px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.text {
+  display: grid;
+  gap: 2px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+:root[lang='ar'] .name {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.light .tagline {
+  color: var(--text-on-dark-muted);
+}
+
+:root[lang='ar'] .tagline {
+  letter-spacing: 0;
+}

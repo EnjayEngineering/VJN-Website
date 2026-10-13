@@ -1,0 +1,174 @@
+.footer {
+  position: relative;
+  background: var(--green);
+  color: var(--text-on-dark);
+  overflow: hidden;
+}
+
+.frame {
+  border-top: 0;
+}
+
+.panel {
+  position: relative;
+  padding-top: clamp(48px, 6vw, 72px);
+}
+
+.intro {
+  display: grid;
+  gap: 32px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid var(--line-on-dark);
+}
+
+.brand {
+  display: grid;
+  gap: 16px;
+  max-width: 44ch;
+  color: var(--text-on-dark-muted);
+}
+
+.reach {
+  display: grid;
+  gap: 12px;
+}
+
+.reachLink {
+  display: grid;
+  gap: 4px;
+  padding: 16px 20px;
+  border: 1px solid var(--line-on-dark);
+  border-radius: var(--radius);
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.reachLink:hover {
+  background: rgb(255 255 255 / 0.06);
+  border-color: rgb(255 255 255 / 0.3);
+}
+
+.reachLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-on-dark-muted);
+  font-size: var(--fs-xs);
+}
+
+.reachValue {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1rem + 0.5vw, 1.35rem);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.links {
+  display: grid;
+  gap: 36px;
+  padding-block: 44px;
+}
+
+.heading {
+  margin-bottom: 16px;
+  color: #fff;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+  color: var(--text-on-dark-muted);
+  font-size: var(--fs-sm);
+}
+
+.list a {
+  transition: color 0.2s;
+}
+
+.list a:hover {
+  color: #fff;
+}
+
+.twoCol {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 20px;
+}
+
+.iconList li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.iconList svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--accent);
+}
+
+.bottom {
+  display: grid;
+  gap: 12px;
+  padding-block: 22px;
+  border-top: 1px solid var(--line-on-dark);
+  color: var(--text-on-dark-muted);
+  font-size: var(--fs-xs);
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.legal button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+}
+
+.legal a:hover,
+.legal button:hover {
+  color: #fff;
+}
+
+.signature {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  opacity: 0.07;
+  line-height: 0;
+  pointer-events: none;
+  user-select: none;
+  filter: grayscale(1) brightness(2);
+}
+
+.wordmark {
+  width: min(70vw, 300px);
+  height: auto;
+}
+
+@media (min-width: 800px) {
+  .intro {
+    grid-template-columns: 1fr minmax(320px, 420px);
+    align-items: end;
+  }
+
+  .links {
+    grid-template-columns: 0.7fr 1.4fr 1fr;
+    gap: 56px;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .bottom > :last-child {
+    text-align: end;
+  }
+}

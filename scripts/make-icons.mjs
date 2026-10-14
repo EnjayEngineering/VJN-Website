@@ -26,7 +26,7 @@ const overlay = Buffer.from(`
     <text x="80" y="300" font-size="64" font-weight="700">VJN Technical Services</text>
     <text x="80" y="370" font-size="34" fill="#f26419">MEP, Maintenance &amp; Fit-out in Dubai</text>
     <text x="80" y="520" font-size="26" fill="#d6e2e2">Air-conditioning · Electromechanical · Plumbing · Electrical · Interiors</text>
-    <text x="80" y="562" font-size="26" fill="#d6e2e2">+971 4 380 6877 · Al Quoz, Dubai, U.A.E.</text>
+    <text x="80" y="562" font-size="26" fill="#d6e2e2">+971 52 645 6827 · Al Quoz, Dubai, U.A.E.</text>
   </g>
 </svg>`);
 

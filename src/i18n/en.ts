@@ -11,7 +11,7 @@ export const en = {
     /** Search-result title for a service page; `{service}` is the service title. */
     serviceTitle: '{service} in Dubai',
     /** Search-result description for a service page; `{summary}` is the service summary. */
-    serviceDescription: '{summary} Call +971 4 380 6877 to book a site visit anywhere in Dubai.',
+    serviceDescription: '{summary} Call +971 52 645 6827 to book a site visit anywhere in Dubai.',
   },
 
   nav: {
@@ -506,7 +506,7 @@ export const en = {
       title: 'Contact',
       metaTitle: 'Contact Us & Request a Quote in Dubai',
       description:
-        'Contact VJN Technical Services in Dubai. Call +971 4 380 6877 to request a site visit and quotation.',
+        'Contact VJN Technical Services in Dubai. Call +971 52 645 6827 to request a site visit and quotation.',
       heroTitle: 'Let’s get to work.',
       heroLead:
         'Tell us about your property and the work you need. We’ll arrange a visit and send a clear quotation.',

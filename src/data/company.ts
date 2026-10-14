@@ -6,7 +6,7 @@ export const company = {
   geo: { latitude: 25.1336543, longitude: 55.2467974 },
   phone: '+971 52 645 6827',
   phoneHref: 'tel:+971526456827',
-  email: 'sales.rnstech@gmail.com',
+  email: 'sales.vjntech@gmail.com',
   /** Google Analytics 4 measurement ID; loaded only with consent (`src/lib/analytics.ts`). */
   analyticsId: 'G-MJBB1PXEHG',
   mapEmbedUrl:

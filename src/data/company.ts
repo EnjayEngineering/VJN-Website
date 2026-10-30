@@ -1,7 +1,7 @@
 /** Contact details that don't change between languages. Text lives in `src/i18n`. */
 export const company = {
   /** Production origin, used for canonical URLs, the sitemap and social previews. No trailing slash. */
-  siteUrl: 'https://rnstechservice.com',
+  siteUrl: 'https://vjntechservice.com',
   /** Map pin for the Al Quoz office (matches `mapEmbedUrl`). */
   geo: { latitude: 25.1336543, longitude: 55.2467974 },
   phone: '+971 52 645 6827',

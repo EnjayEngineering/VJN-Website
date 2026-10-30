@@ -62,7 +62,7 @@ const en: LegalText = {
     privacy: {
       title: 'Privacy Policy',
       intro:
-        'This policy explains what information this website (rnstechservice.com) handles, why, and the choices you have. It is written to match how the site actually works.',
+        'This policy explains what information this website (vjntechservice.com) handles, why, and the choices you have. It is written to match how the site actually works.',
       otherLink: 'Read our Terms & Conditions',
       sections: [
         {
@@ -200,7 +200,7 @@ const en: LegalText = {
     terms: {
       title: 'Terms & Conditions',
       intro:
-        'These terms apply to your use of this website (rnstechservice.com), which is run by VJN Technical Services LLC ("VJN", "we" or "us"). By using the site you agree to them; if you do not agree, please do not use the site. How we handle personal information is explained separately in our Privacy Policy.',
+        'These terms apply to your use of this website (vjntechservice.com), which is run by VJN Technical Services LLC ("VJN", "we" or "us"). By using the site you agree to them; if you do not agree, please do not use the site. How we handle personal information is explained separately in our Privacy Policy.',
       otherLink: 'Read our Privacy Policy',
       sections: [
         {
@@ -318,7 +318,7 @@ const ar: LegalText = {
     privacy: {
       title: 'سياسة الخصوصية',
       intro:
-        'توضح هذه السياسة المعلومات التي يتعامل معها هذا الموقع (rnstechservice.com)، وسبب ذلك، والخيارات المتاحة لك. وقد كُتبت لتطابق الطريقة التي يعمل بها الموقع فعليًا.',
+        'توضح هذه السياسة المعلومات التي يتعامل معها هذا الموقع (vjntechservice.com)، وسبب ذلك، والخيارات المتاحة لك. وقد كُتبت لتطابق الطريقة التي يعمل بها الموقع فعليًا.',
       otherLink: 'اقرأ الشروط والأحكام',
       sections: [
         {
@@ -456,7 +456,7 @@ const ar: LegalText = {
     terms: {
       title: 'الشروط والأحكام',
       intro:
-        'تسري هذه الشروط على استخدامك لهذا الموقع (rnstechservice.com) الذي تديره شركة في جي إن للخدمات الفنية ذ.م.م ("في جي إن" أو "نحن"). باستخدامك للموقع فإنك توافق عليها، وإن لم توافق عليها يُرجى عدم استخدام الموقع. أما طريقة تعاملنا مع المعلومات الشخصية فموضحة بشكل منفصل في سياسة الخصوصية.',
+        'تسري هذه الشروط على استخدامك لهذا الموقع (vjntechservice.com) الذي تديره شركة في جي إن للخدمات الفنية ذ.م.م ("في جي إن" أو "نحن"). باستخدامك للموقع فإنك توافق عليها، وإن لم توافق عليها يُرجى عدم استخدام الموقع. أما طريقة تعاملنا مع المعلومات الشخصية فموضحة بشكل منفصل في سياسة الخصوصية.',
       otherLink: 'اقرأ سياسة الخصوصية',
       sections: [
         {
